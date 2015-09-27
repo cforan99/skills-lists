@@ -74,34 +74,40 @@ def print_indeces(my_list):
         print "{} {}".format(pair[0], pair[1])
 
 
-# def long_words(word_list):
-#     """Return all words in input list that are longer than 4 characters.
+def long_words(word_list):
+    """Return all words in input list that are longer than 4 characters.
 
-#         >>> long_words(["hello", "hey", "spam", "spam", "bacon", "bacon"])
-#         ['hello', 'bacon', 'bacon']
+        >>> long_words(["hello", "hey", "spam", "spam", "bacon", "bacon"])
+        ['hello', 'bacon', 'bacon']
 
-#         >>> long_words(["all", "are", "tiny"])
-#         []
+        >>> long_words(["all", "are", "tiny"])
+        []
 
-#     """
+    """
 
-#     return ['the wrong thing']
+    long_list = [word for word in word_list if len(word) > 4]
+
+    return long_list
 
 
-# def smallest_int(number_list):
-#     """Find the smallest integer in a list of integers and return it.
+def smallest_int(number_list):
+    """Find the smallest integer in a list of integers and return it.
 
-#         >>> smallest_int([-5, 2, -5, 7])
-#         -5
+        >>> smallest_int([-5, 2, -5, 7])
+        -5
 
-#     If the input list is empty, return None:
+    If the input list is empty, return None:
 
-#         >>> smallest_int([]) is None
-#         True
+        >>> smallest_int([]) is None
+        True
 
-#     """
+    """
 
-#     return 100
+    if number_list == []:
+        return None
+    else: 
+        sorted_list = sorted(number_list)
+        return sorted_list[0]
 
 
 # def largest_int(number_list):
