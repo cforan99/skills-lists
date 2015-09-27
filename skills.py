@@ -22,49 +22,56 @@ def all_odd(number_list):
 
     """
 
-    odd_list = []
+    odd_list = [number for number in number_list if number % 2 != 0]
 
-    for number in number_list:
-        if number % 2 != 0:
-            odd_list.append(number)
+    """written without list comprehension"""
+
+    # odd_list = []
+    # for number in number_list:
+    #     if number % 2 != 0:
+    #         odd_list.append(number)
 
     return odd_list
 
 
-# def all_even(number_list):
-#     """Return a list of only the even numbers in the input list.
+def all_even(number_list):
+    """Return a list of only the even numbers in the input list.
 
-#         >>> all_even([2, 6, -1, -2])
-#         [2, 6, -2]
+        >>> all_even([2, 6, -1, -2])
+        [2, 6, -2]
 
-#         >>> all_even([-1, 3, 5])
-#         []
+        >>> all_even([-1, 3, 5])
+        []
 
-#     """
+    """
+    even_list = [number for number in number_list if number % 2 == 0]
 
-#     return ['the wrong thing']
+    return even_list
 
 
-# def print_indeces(my_list):
-#     """Print the index of each list item, followed by the item itself.
-#     Do this without using a counting variable. I.e. don't do something
-#     like this:
+def print_indeces(my_list):
+    """Print the index of each list item, followed by the item itself.
+    Do this without using a counting variable. I.e. don't do something
+    like this:
 
-#     count = 0
-#     for item in list:
-#         print count
-#         count = count + 1
+    count = 0
+    for item in list:
+        print count
+        count = count + 1
 
-#     Output should look like this:
+    Output should look like this:
 
-#     >>> print_indeces(["Toyota", "Jeep", "Volvo"])
-#     0 Toyota
-#     1 Jeep
-#     2 Volvo
+    >>> print_indeces(["Toyota", "Jeep", "Volvo"])
+    0 Toyota
+    1 Jeep
+    2 Volvo
 
-#     """
+    """
 
-#     print "Nothing at all"
+    tuple_list = list(enumerate(my_list))
+
+    for pair in tuple_list:
+        print "{} {}".format(pair[0], pair[1])
 
 
 # def long_words(word_list):
