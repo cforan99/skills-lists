@@ -110,36 +110,42 @@ def smallest_int(number_list):
         return sorted_list[0]
 
 
-# def largest_int(number_list):
-#     """Find the largest integer in a list of integers and return it.
+def largest_int(number_list):
+    """Find the largest integer in a list of integers and return it.
 
-#         >>> largest_int([-5, 2, -5, 7])
-#         7
+        >>> largest_int([-5, 2, -5, 7])
+        7
 
-#     If the input list is empty, return None:
+    If the input list is empty, return None:
 
-#         >>> largest_int([]) is None
-#         True
+        >>> largest_int([]) is None
+        True
 
-#     """
+    """
 
-#     return 0
+    if number_list == []:
+        return None
+    else: 
+        sorted_list = sorted(number_list)
+        return sorted_list[-1]
 
 
-# def halvesies(number_list):
-#     """Return list of numbers from input list, each divided by two.
+def halvesies(number_list):
+    """Return list of numbers from input list, each divided by two.
 
-#         >>> halvesies([2, 6, -2])
-#         [1.0, 3.0, -1.0]
+        >>> halvesies([2, 6, -2])
+        [1.0, 3.0, -1.0]
 
-#     If any of the numbers are, make sure you don't round off the half:
+    If any of the numbers are, make sure you don't round off the half:
 
-#         >>> halvesies([1, 5])
-#         [0.5, 2.5]
+        >>> halvesies([1, 5])
+        [0.5, 2.5]
 
-#     """
+    """
 
-#     return []
+    halves_list = [number/2.0 for number in number_list]
+
+    return halves_list
 
 
 # def word_lengths(word_list):
