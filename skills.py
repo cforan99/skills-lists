@@ -148,34 +148,39 @@ def halvesies(number_list):
     return halves_list
 
 
-# def word_lengths(word_list):
-#     """Return the length of words in the input list.
+def word_lengths(word_list):
+    """Return the length of words in the input list.
 
-#         >>> word_lengths(["hello", "hey", "hello", "spam"])
-#         [5, 3, 5, 4]
+        >>> word_lengths(["hello", "hey", "hello", "spam"])
+        [5, 3, 5, 4]
 
-#     """
+    """
 
-#     return []
+    length_list = [len(word) for word in word_list]
+
+    return length_list
 
 
-# def sum_numbers(number_list):
-#     """Return the sum of all of the numbers in the list.
+def sum_numbers(number_list):
+    """Return the sum of all of the numbers in the list.
 
-#     Python has a built-in function, `sum()`, which already does this -- but for
-#     this exercise, you should not use it.
+    Python has a built-in function, `sum()`, which already does this -- but for
+    this exercise, you should not use it.
 
-#         >>> sum_numbers([1, 2, 3, 10])
-#         16
+        >>> sum_numbers([1, 2, 3, 10])
+        16
 
-#     Any empty list should return the sum of zero:
+    Any empty list should return the sum of zero:
 
-#         >>> sum_numbers([])
-#         0
+        >>> sum_numbers([])
+        0
 
-#     """
-
-#     return None
+    """
+    if number_list == []:
+        return 0
+    else:
+        total = reduce(lambda x, y: x + y, number_list)
+        return total
 
 
 # def mult_numbers(number_list):
