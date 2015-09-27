@@ -183,58 +183,71 @@ def sum_numbers(number_list):
         return total
 
 
-# def mult_numbers(number_list):
-#     """Return product (result of multiplication) of the numbers in the list.
+def mult_numbers(number_list):
+    """Return product (result of multiplication) of the numbers in the list.
 
-#         >>> mult_numbers([1, 2, 3])
-#         6
+        >>> mult_numbers([1, 2, 3])
+        6
 
-#     Obviously, if there is a zero in the input, the product will be zero:
+    Obviously, if there is a zero in the input, the product will be zero:
 
-#         >>> mult_numbers([10, 20, 0, 50])
-#         0
+        >>> mult_numbers([10, 20, 0, 50])
+        0
 
-#     As explained at http://en.wikipedia.org/wiki/Empty_product, if the list is
-#     empty, the product should be 1:
+    As explained at http://en.wikipedia.org/wiki/Empty_product, if the list is
+    empty, the product should be 1:
 
-#         >>> mult_numbers([])
-#         1
+        >>> mult_numbers([])
+        1
 
-#     """
+    """
 
-#     return None
-
-
-# def join_strings(word_list):
-#     """Return a string of all input strings joined together.
-
-#     Python ha a built-in method on lists, `join` -- but this exercise, you
-#     should not use it.
-
-#         >>> join_strings(["spam", "spam", "bacon", "balloonicorn"])
-#         'spamspambaconballoonicorn'
-
-#     For an empty list, you should return an empty string:
-
-#         >>> join_strings([])
-#         ''
-
-#     """
-
-#     return "Not the right thing"
+    if number_list == []:
+        return 1
+    else:
+        total = reduce(lambda x, y: x * y, number_list)
+        return total
 
 
-# def average(number_list):
-#     """Return the average (mean) of the list of numbers given.
+def join_strings(word_list):
+    """Return a string of all input strings joined together.
 
-#         >>> average([2, 12, 3])
-#         5.666666666666667
+    Python ha a built-in method on lists, `join` -- but this exercise, you
+    should not use it.
 
-#     There is no defined answer if the list given is empty. It's fine if
-#     this raises an error when given an empty list.
-#     """
+        >>> join_strings(["spam", "spam", "bacon", "balloonicorn"])
+        'spamspambaconballoonicorn'
 
-#     return 0
+    For an empty list, you should return an empty string:
+
+        >>> join_strings([])
+        ''
+
+    """
+
+    if word_list == []:
+        return ""
+    else:
+        jumble = reduce(lambda x, y: x + y, word_list)
+        return jumble
+
+
+def average(number_list):
+    """Return the average (mean) of the list of numbers given.
+
+        >>> average([2, 12, 3])
+        5.666666666666667
+
+    There is no defined answer if the list given is empty. It's fine if
+    this raises an error when given an empty list.
+    """
+
+    length = len(number_list)
+    total = reduce(lambda x, y: x + y, number_list)
+    average = float(total)/float(length)
+    
+    return average
+
 
 
 #############################################################################
@@ -244,22 +257,27 @@ def sum_numbers(number_list):
 # Tip: To comment or uncomment blocks of code, highlight what you want to
 #    comment or uncomment, and then CMD+"/" or CTRL-"/"
 
-# def advanced_join_strings(list_of_words):
-#     """Return a single string with each word from the input list
-#     separated by a comma.
+def advanced_join_strings(list_of_words):
+    """Return a single string with each word from the input list
+    separated by a comma.
 
-#         >>> advanced_join_strings(["Labrador", "Poodle", "French Bulldog"])
-#         'Labrador, Poodle, French Bulldog'
+        >>> advanced_join_strings(["Labrador", "Poodle", "French Bulldog"])
+        'Labrador, Poodle, French Bulldog'
 
-#     If there's only one thing in the list, it should return just that
-#     thing, of course:
+    If there's only one thing in the list, it should return just that
+    thing, of course:
 
-#         >>> advanced_join_strings(["Pretzel"])
-#         'Pretzel'
+        >>> advanced_join_strings(["Pretzel"])
+        'Pretzel'
 
-#     """
+    """
 
-#     return ""
+    if list_of_words == []:
+        return ""
+    else:
+        comma_delimited = reduce(lambda x, y: x + ", " + y, list_of_words)
+        return comma_delimited
+        
 
 # END OF ASSIGNMENT: You can ignore everything below.
 ##############################################################################
